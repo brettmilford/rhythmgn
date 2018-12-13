@@ -1,6 +1,6 @@
 module Examples where
-import Euterpea
-import RhythmGn
+import           Euterpea
+import           RhythmGn
 
 {-| Simple, non-generative rhythm
     The play this with `play rhythmicPattern`
@@ -36,10 +36,10 @@ tma = tm1 :=: tm2 :=: tm3
     Usage: `play myudRhythm`
 -}
 
-myInstruments = [BassDrum1,OpenHiHat,ClosedHiHat,AcousticSnare]
--- N.B Rests in the same list cause a type error 
+-- N.B Rests in the same list cause a type error
 -- e.g. myRhythms = [qnr,en,sn,hnr]
 myRhythms = [qn,en,sn,hn]
+myInstruments = [BassDrum1,OpenHiHat,ClosedHiHat,AcousticSnare]
 
 -- Uniform distribution
 myudRhythm = udRhythm myInstruments myRhythms 42
@@ -75,5 +75,5 @@ phr01 = [bar01,bar02]
 phr02 = [bar02,bar01]
 
 -- Phrases must corespond to instruments, it doesn't make sense to
--- select the instrument randomly
+-- select the instrument randomly as in the random implementation
 testRhythmGen = rhythmGen [(BassDrum1,phr01),(AcousticSnare,phr02)] 3 42
